@@ -16,6 +16,7 @@ class keystone::params {
       $sqlite_package_name          = 'python-pysqlite2'
       $pymysql_package_name         = 'python-pymysql'
       $mellon_package_name          = 'libapache2-mod-auth-mellon'
+      $openidc_package_name         = 'libapache2-mod-auth-openidc'
       case $::operatingsystem {
         'Debian': {
           $service_provider            = undef
@@ -34,6 +35,7 @@ class keystone::params {
       $service_provider             = undef
       $pymysql_package_name         = undef
       $mellon_package_name          = 'mod_auth_mellon'
+      $openidc_package_name         = 'mod_auth_openidc'
     }
   }
 }
