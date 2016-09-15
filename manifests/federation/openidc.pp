@@ -66,6 +66,7 @@ class keystone::federation::openidc (
   $openidc_client_id,
   $openidc_client_secret,
   $openidc_crypto_passphrase   = 'openstack',
+  $openidc_response_type       = 'id_token',
   $admin_port                  = false,
   $main_port                   = true,
   $module_plugin               = 'keystone.auth.plugins.mapped.Mapped',
@@ -121,7 +122,7 @@ class keystone::federation::openidc (
   if $main_port {
     keystone::federation::openidc_httpd_configuration{ 'main':
       port              => $::keystone::public_port,
-      keystone_endpoint => $::keystone::admin_endpoint,
+      keystone_endpoint => $::keystone::endpoint::public_url,
     }
   }
 
