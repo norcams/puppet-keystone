@@ -18,3 +18,8 @@
       AuthType "openid-connect"
       Require valid-user
   </LocationMatch>
+
+  <Location /v3/auth/OS-FEDERATION/websso/openidc>
+      AuthType "openid-connect"
+      Require valid-user
+  </Location>
